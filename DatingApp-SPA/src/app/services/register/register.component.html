@@ -1,0 +1,39 @@
+<!-- Template driven form -->
+<form #registerForm ="ngForm" (ngSubmit)="register()">
+  <h1 class="text-center">Register Now</h1>
+  <p class="lead text-center">Don't waster your time, just signup!</p>
+    <hr> 
+
+    <div class="form-group">
+      <input 
+        type="text" 
+        name="username"
+        [(ngModel)]="model.username"
+        class="form-control" 
+        placeholder="Username" 
+        required
+        />
+    </div>
+  
+    <div class="form-group">
+      <input 
+        type="password"
+        name="password"
+        [(ngModel)]="model.password" 
+        class="form-control" 
+        placeholder="Password" 
+        required
+        />
+    </div>
+  
+    <div class="form-group text-center">
+      <button class="btn btn-success mr-2" type="submit" 
+        [disabled]="!registerForm.valid">
+        Register
+      </button>
+      <button class="btn btn-info" 
+        type="button"
+        (click) = "cancel()">Cancel</button>
+    </div>
+    
+  </form>
